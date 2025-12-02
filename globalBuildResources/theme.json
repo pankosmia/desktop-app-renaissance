@@ -7,16 +7,16 @@
       "contrastText":"#FFF"
     },
     "secondary": {
-	    "main": "#18818B",
-      "light":"#469AA2",
-      "dark":"#105A61",
+	    "main": "#E45F0C",
+      "light":"#E97F3C",
+      "dark":"#9F4208",
       "contrastText":"#FFF"
     },
       "appbar-chip-inactive":{
-      "main":"#469AA2",
-      "light":"#6BAEB4",
-      "dark":"#316B71",
-      "contrastText":"#FFF"
+      "main":"#E97F3C",
+      "light":"#ED9863",
+      "dark":"#A3582A",
+      "contrastText":"#000"
     }
   }
 }
