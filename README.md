@@ -8,7 +8,7 @@ Choose a repo-name of 30 characters or less to prevent **Windows developers** fr
 Tested on:
 | Ubuntu 24.04 with: | Windows 11 with: | MacOS with: |
 |-------|---------|-------|
-|- npm 9.2.0<br />- node 20.11.0<br />- rustc 1.83.0 -- `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` | - npm 10.7.0<br />- node 20.11.0<br />- rustc 1.83.0 -- See https://www.rust-lang.org/tools/install<br />- cmake 3.31.0 -- Version 3 is required. See https://cmake.org/download/ | - npm 10.7.0 (tested on Monterey)<br />- npm 10.8.2 (tested on Sequoia)<br />- node 20.11.0<br />- rustc 1.88.0 -- `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh`<br />- OpenSSL 3.5.0 -- `brew install openssl` |
+|- npm 9.2.0<br />- node 20.11.0<br />- rustc 1.88.0 -- `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` | - npm 10.7.0<br />- node 20.11.0<br />- rustc 1.88.0 -- See https://www.rust-lang.org/tools/install<br />- cmake 3.31.0 -- Version 3 is required. See https://cmake.org/download/ | - npm 10.7.0 (tested on Monterey)<br />- npm 10.8.2 (tested on Sequoia)<br />- node 20.11.0<br />- rustc 1.88.0 -- `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh`<br />- OpenSSL 3.5.0 -- `brew install openssl` |
 
 ## Setup
 
@@ -28,7 +28,7 @@ npm install
 </pre></ul>
 
 4. Edit app_config.env, entering the App Name, version number, Apps Short Name for working directory, assets, and clients.
-5. Change /globalBuildResources/theme.json directly to customize your app.  And for logos, see the [Panksomia Branding README](https://github.com/pankosmia/branding/blob/main/README.md) for a script towards customizing /globalBuildResources/*.ico, /globalBuildResources/*.png, and /globalBuildResources/icon.icns, along with info on how each is used. 
+5. Change /globalBuildResources/theme.json directly to customize your app. And for logos, see the [Branding README](/branding/README.md) for scripts for customizing /globalBuildResources/*.ico, /globalBuildResources/*.png, and /globalBuildResources/icon.icns, along with info on how each is used.
 6. `cd [os]/scripts`
 7. Run<sup id="a1">[[1]](#f1)</sup> the `clone` script to clone all repos listed in `app_config.env` (assets and clients)
 8. Run<sup id="a1">[[1]](#f1)</sup> the `app_setup` script to generate the config files to match `app_config.env`. Re-run<sup id="a1">[[1]](#f1)</sup> the `app_setup` script anytime `app_config.env` is modified.
@@ -72,11 +72,11 @@ npm install
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_...repos\pankosmia\[your-desktop-app-repo-name]\windows\scripts>_ `.\[scriptname].bat`<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Use a **powershell** terminal for the **.ps1** build scripts.
 <br />
-MacOS developers, run .bsh scripts from a **linux terminal**:<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_...repos/pankosmia/[your-desktop-app-repo-name]/linux/scripts>_ `./[scriptname].bsh`
+MacOS developers, run .bsh scripts from a **MacOS terminal**:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_...repos/pankosmia/[your-desktop-app-repo-name]/macos/scripts>_ `./[scriptname].bsh`
 <br />
-Linux developers, run .zsh scripts from a **MacOS terminal**:<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_...repos/pankosmia/[your-desktop-app-repo-name]/macos/scripts>_ `./[scriptname].zsh`
+Linux developers, run .zsh scripts from a **linux terminal**:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_...repos/pankosmia/[your-desktop-app-repo-name]/linux/scripts>_ `./[scriptname].zsh`
 
 [<b id="f2">2</b>] ... The build script will fail on any clients set to a different branch with uncommitted changes or with conflicts vs, the latest main pull. Scroll back up in the terminal to find any build errors and address them.
 
