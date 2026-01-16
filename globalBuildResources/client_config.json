@@ -7,7 +7,7 @@
         {
           "id": "archiveMenu",
           "i18n": "Archive Menu",
-          "value": true
+          "value": false
         }
       ]
     }
