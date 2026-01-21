@@ -20,7 +20,7 @@
         {
           "id": "protestantBooksOnlyCheckbox",
           "i18n": "Protestant Books Only Checkbox",
-          "value": true
+          "value": false
         },
         {
           "id": "protestantBooksOnlyDefaultChecked",
