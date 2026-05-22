@@ -1,0 +1,16 @@
+{
+  "organizations": [
+    {
+        "name":"Aquifer",
+        "url":"git.door43.org/shower"
+    },
+    {
+      "name": "BurritoTruck",
+      "url": "git.door43.org/BurritoTruck"
+    },
+    {
+      "name": "uW",
+      "url": "git.door43.org/uW"
+    }
+  ]
+}
