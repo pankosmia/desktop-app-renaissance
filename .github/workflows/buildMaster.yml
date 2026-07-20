@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       timestamp:       ${{ steps.stamp.outputs.timestamp }}
-      artifact_suffix: ${{ inputs.artifact_suffix }}
+      artifact_suffix: ${{ steps.sanitize.outputs.artifact_suffix }}
     steps:
       - name: Sanitize artifact_suffix
         id: sanitize
@@ -81,6 +81,8 @@ jobs:
       delay_seconds: 1
       log_level: ${{ inputs.log_level }}
       branches: ${{ inputs.branches == 'all of main' && 'main' || inputs.branches == 'all of qa' && 'qa' || 'dev' }}
+      timestamp:       ${{ needs.setup.outputs.timestamp }}
+      artifact_suffix: ${{ needs.setup.outputs.artifact_suffix }}
 
   build-macos-arm64:
     needs: setup
@@ -92,6 +94,8 @@ jobs:
       delay_seconds: 600
       log_level: ${{ inputs.log_level }}
       branches: ${{ inputs.branches == 'all of main' && 'main' || inputs.branches == 'all of qa' && 'qa' || 'dev' }}
+      timestamp:       ${{ needs.setup.outputs.timestamp }}
+      artifact_suffix: ${{ needs.setup.outputs.artifact_suffix }}
 
   build-windows-x64:
     needs: setup
@@ -102,6 +106,8 @@ jobs:
       runner: windows-2025
       log_level: ${{ inputs.log_level }}
       branches: ${{ inputs.branches == 'all of main' && 'main' || inputs.branches == 'all of qa' && 'qa' || 'dev' }}
+      timestamp:       ${{ needs.setup.outputs.timestamp }}
+      artifact_suffix: ${{ needs.setup.outputs.artifact_suffix }}
 
   build-windows-arm64:
     needs: setup
@@ -112,6 +118,8 @@ jobs:
       runner: windows-11-arm
       log_level: ${{ inputs.log_level }}
       branches: ${{ inputs.branches == 'all of main' && 'main' || inputs.branches == 'all of qa' && 'qa' || 'dev' }}
+      timestamp:       ${{ needs.setup.outputs.timestamp }}
+      artifact_suffix: ${{ needs.setup.outputs.artifact_suffix }}
 
   build-linux-x64:
     needs: setup
@@ -122,6 +130,8 @@ jobs:
       runner: ubuntu-22.04
       log_level: ${{ inputs.log_level }}
       branches: ${{ inputs.branches == 'all of main' && 'main' || inputs.branches == 'all of qa' && 'qa' || 'dev' }}
+      timestamp:       ${{ needs.setup.outputs.timestamp }}
+      artifact_suffix: ${{ needs.setup.outputs.artifact_suffix }}
 
   build-linux-arm64:
     needs: setup
@@ -132,6 +142,8 @@ jobs:
       runner: ubuntu-22.04-arm
       log_level: ${{ inputs.log_level }}
       branches: ${{ inputs.branches == 'all of main' && 'main' || inputs.branches == 'all of qa' && 'qa' || 'dev' }}
+      timestamp:       ${{ needs.setup.outputs.timestamp }}
+      artifact_suffix: ${{ needs.setup.outputs.artifact_suffix }}
 
   finalize:
     needs: [build-macos-x64, build-macos-arm64, build-windows-x64, build-windows-arm64, build-linux-x64, build-linux-arm64]
