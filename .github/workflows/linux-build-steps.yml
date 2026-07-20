@@ -13,6 +13,15 @@ on:
       log_level:
         required: true
         type: string
+      timestamp:
+        description: 'Build-order timestamp computed once in the setup job'
+        required: true
+        type: string
+      artifact_suffix:
+        description: 'Artifact name identifier (optional)'
+        required: false
+        type: string
+        default: ''
     outputs:
       tgz-name:
         description: "Name of the generated TGZ file"
