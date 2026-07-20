@@ -13,5 +13,5 @@ if [ -n "$1" ]; then
     configFile="../../app_config.env"
 
     echo "  Using version suffix \"$1\""
-    sed -i '/^APP_VERSION/ s/$/'"$1"'/' "$configFile"
+    sed -i '/^APP_VERSION/ s/$/'-"$1"'/' "$configFile"
 fi
