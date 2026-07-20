@@ -79,6 +79,13 @@ jobs:
         with:
           node-version: '20.19.5'
 
+      # Add suffix to version
+      - name: Run gha_ver_suffix.bsh
+        working-directory: ./linux/install
+        run: |
+          chmod +x ./gha_ver_suffix.bsh
+          ./gha_ver_suffix.bsh "${{ inputs.artifact_suffix != '' && format('{0}-{1}', inputs.artifact_suffix, inputs.timestamp) || inputs.timestamp }}"
+
       # Install the repository
       - name: Install this repo
         run: npm ci
